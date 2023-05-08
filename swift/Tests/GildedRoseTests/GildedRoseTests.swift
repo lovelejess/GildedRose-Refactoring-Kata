@@ -9,11 +9,11 @@ class GildedRoseTests: XCTestCase {
         XCTAssertEqual(app.items[0].name, "foo")
     }
 
-    func  test_updateQuality_doesNotDecreaseSellIn_whenItemIsNotSulfuras() {
+    func test_updateQuality_decreaseSellIn_whenItemIsNotSulfuras() {
         let items = [Item(name: "foo", sellIn: 10, quality: 0)]
         let app = GildedRose(items: items)
         app.updateQuality()
-        XCTAssertEqual(app.items[0].sellIn, 10)
+        XCTAssertEqual(app.items[0].sellIn, 9)
     }
 }
 
