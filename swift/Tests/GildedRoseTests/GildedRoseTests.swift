@@ -15,6 +15,13 @@ class GildedRoseTests: XCTestCase {
         app.updateQuality()
         XCTAssertEqual(app.items[0].sellIn, 9)
     }
+
+    func test_updateQuality_retainsSellIn_wheItemIsSulfuras() {
+        let sulfuras = [Item(name:"Sulfuras, Hand of Ragnaros", sellIn: 100, quality: 0)]
+        let app = GildedRose(items: sulfuras)
+        app.updateQuality()
+        XCTAssertEqual(app.items[0].sellIn, 100)
+    }
 }
 
 /*
