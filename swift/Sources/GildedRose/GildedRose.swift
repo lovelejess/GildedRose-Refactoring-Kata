@@ -19,12 +19,14 @@ public class GildedRose {
 
                     if item.name == "Backstage passes to a TAFKAL80ETC concert" {
                         if item.sellIn < 11 {
+                            // TODO: Pull into func
                             if item.quality < 50 {
                                 item.quality = item.quality + 1
                             }
                         }
 
                         if item.sellIn < 6 {
+                            // TODO: Pull into func
                             if item.quality < 50 {
                                 item.quality = item.quality + 1
                             }
@@ -47,6 +49,7 @@ public class GildedRose {
                         item.quality = item.quality - item.quality
                     }
                 } else {
+                    // TODO: Pull into func
                     if item.quality < 50 {
                         item.quality = item.quality + 1
                     }
@@ -55,7 +58,7 @@ public class GildedRose {
         }
     }
 
-    func reduceSellIn(item: Item) {
+    private func reduceSellIn(item: Item) {
         if item.name != "Sulfuras, Hand of Ragnaros" {
             item.sellIn = item.sellIn - 1
         }
