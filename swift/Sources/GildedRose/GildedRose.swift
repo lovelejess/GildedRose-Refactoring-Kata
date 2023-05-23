@@ -33,9 +33,7 @@ public class GildedRose {
                 }
             }
 
-            if item.name != "Sulfuras, Hand of Ragnaros" {
-                item.sellIn = item.sellIn - 1
-            }
+            reduceSellIn(item: item)
 
             if item.sellIn < 0 {
                 if item.name != "Aged Brie" {
@@ -57,19 +55,9 @@ public class GildedRose {
         }
     }
 
-//    decreaseSellIn(item: item)
-//
-//    if item.name != "Sulfuras, Hand of Ragnaros" {
-//        decreaseSellIn(to: item, by: 1)
-//    }
-//    func decreaseSellIn(item: Item) {
-//        if item.name != "Sulfuras, Hand of Ragnaros" {
-//            // TODO: Pull into item class
-//            item.sellIn = item.sellIn - 1
-//        }
-//    }
-//
-//    func decreaseSellIn(to item: Item, by descrease: Int) {
-//        item.sellIn -) decrease
-//    }
+    func reduceSellIn(item: Item) {
+        if item.name != "Sulfuras, Hand of Ragnaros" {
+            item.sellIn = item.sellIn - 1
+        }
+    }
 }
