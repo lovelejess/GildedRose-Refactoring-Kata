@@ -46,7 +46,7 @@ public class GildedRose {
                             }
                         }
                     } else {
-                        item.quality = item.quality - item.quality
+                        item.quality = 0
                     }
                 } else {
                     // TODO: Pull into func
@@ -63,4 +63,6 @@ public class GildedRose {
             item.sellIn = item.sellIn - 1
         }
     }
+
+
 }

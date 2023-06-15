@@ -29,4 +29,11 @@ class GildedRoseTests: XCTestCase {
         app.updateQuality()
         XCTAssertEqual(app.items[0].quality, 50)
     }
+
+    func test_updateQuality_reducesQualityTo0_whenItemIsABackstagePass() {
+        let backstagePass = [Item(name:"Backstage passes to a TAFKAL80ETC concert", sellIn: -1, quality: 49)]
+        let app = GildedRose(items: backstagePass)
+        app.updateQuality()
+        XCTAssertEqual(app.items[0].quality, 0)
+    }
 }
