@@ -36,31 +36,35 @@ public class GildedRose {
             }
 
             reduceSellIn(item: item)
-
-            if item.sellIn < 0 {
-                if item.name != "Aged Brie" {
-                    if item.name != "Backstage passes to a TAFKAL80ETC concert" {
-                        if item.quality > 0 {
-                            if item.name != "Sulfuras, Hand of Ragnaros" {
-                                item.quality = item.quality - 1
-                            }
-                        }
-                    } else {
-                        item.quality = 0
-                    }
-                } else {
-                    // TODO: Pull into func
-                    if item.quality < 50 {
-                        item.quality = item.quality + 1
-                    }
-                }
-            }
+            secondPart(item: item)
         }
     }
 
     private func reduceSellIn(item: Item) {
         if item.name != "Sulfuras, Hand of Ragnaros" {
             item.sellIn = item.sellIn - 1
+        }
+    }
+
+    // TODO: Rename func
+    func secondPart(item: Item) {
+        if item.sellIn < 0 {
+            if item.name != "Aged Brie" {
+                if item.name != "Backstage passes to a TAFKAL80ETC concert" {
+                    if item.quality > 0 {
+                        if item.name != "Sulfuras, Hand of Ragnaros" {
+                            item.quality = item.quality - 1
+                        }
+                    }
+                } else {
+                    item.quality = 0
+                }
+            } else {
+                // TODO: Pull into func
+                if item.quality < 50 {
+                    item.quality = item.quality + 1
+                }
+            }
         }
     }
 
