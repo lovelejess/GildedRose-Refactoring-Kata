@@ -53,4 +53,11 @@ class GildedRoseTests: XCTestCase {
         XCTAssertEqual(item.name, "Nice Item")
         XCTAssertEqual(item.sellIn, 0)
     }
+
+    func test_isQualityLessThanBase_returnsTrueIfItemQualityIsLessThanBaseQuality() {
+        let item = Item(name: "Nice Item", sellIn: 0, quality: 49)
+        let app = GildedRose(items: [item])
+        XCTAssertTrue(app.isQualityLessThanBase(item))
+
+    }
 }

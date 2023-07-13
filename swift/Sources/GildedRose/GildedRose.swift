@@ -1,5 +1,6 @@
 public class GildedRose {
     var items: [Item]
+    var baseQuality = 50
 
     public init(items: [Item]) {
         self.items = items
@@ -14,20 +15,20 @@ public class GildedRose {
                     }
                 }
             } else {
-                if item.quality < 50 {
+                if isQualityLessThanBase(item) {
                     item.quality = item.quality + 1
 
                     if item.name == "Backstage passes to a TAFKAL80ETC concert" {
                         if item.sellIn < 11 {
                             // TODO: Pull into func
-                            if item.quality < 50 {
+                            if isQualityLessThanBase(item) {
                                 item.quality = item.quality + 1
                             }
                         }
 
                         if item.sellIn < 6 {
                             // TODO: Pull into func
-                            if item.quality < 50 {
+                            if isQualityLessThanBase(item) {
                                 item.quality = item.quality + 1
                             }
                         }
@@ -46,7 +47,6 @@ public class GildedRose {
         }
     }
 
-    // TODO: Rename func
     func updateQuality(item: Item) {
         if item.sellIn < 0 {
             if item.name != "Aged Brie" {
@@ -61,12 +61,14 @@ public class GildedRose {
                 }
             } else {
                 // TODO: Pull into func
-                if item.quality < 50 {
+                if isQualityLessThanBase(item) {
                     item.quality = item.quality + 1
                 }
             }
         }
     }
 
-
+    func isQualityLessThanBase(_ item: Item) -> Bool {
+        item.quality < baseQuality
+    }
 }
