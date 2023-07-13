@@ -48,7 +48,7 @@ class GildedRoseTests: XCTestCase {
     func test_secondPart_itemRemainsTheSame_whenSellInIsGreatherOrEqualToZero() {
         let item = Item(name: "Nice Item", sellIn: 0, quality: 49)
         let app = GildedRose(items: [item])
-        app.secondPart(item: item)
+        app.updateQuality(item: item)
         XCTAssertEqual(item.quality, 49)
         XCTAssertEqual(item.name, "Nice Item")
         XCTAssertEqual(item.sellIn, 0)

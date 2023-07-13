@@ -36,7 +36,7 @@ public class GildedRose {
             }
 
             reduceSellIn(item: item)
-            secondPart(item: item)
+            updateQuality(item: item)
         }
     }
 
@@ -47,7 +47,7 @@ public class GildedRose {
     }
 
     // TODO: Rename func
-    func secondPart(item: Item) {
+    func updateQuality(item: Item) {
         if item.sellIn < 0 {
             if item.name != "Aged Brie" {
                 if item.name != "Backstage passes to a TAFKAL80ETC concert" {
